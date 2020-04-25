@@ -1,46 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos.css" type="text/css">
-    <title>Document</title>
+    <title> Suma </title>
 </head>
 <body>
-    <h1>Calculadora en HTML</h1>
-    <h2>Resuelva sus operaciones</h2>
-    
-    <table class="Calculadora">
-        <tr>
-            
-                <td colspan="4"> <span id="resultado"></span></td>
-            
-</tr>
-<tr>
-    <th><input type="button" value="7" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="8" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="9" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="/" onclick="resultado(this.value)"></th>
-</tr>
-<tr>
-    <th><input type="button" value="4" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="5" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="6" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="*" onclick="resultado(this.value)"></th>
-</tr>
-<tr>
-    <th><input type="button" value="1" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="2" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="3" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="-" onclick="resultado(this.value)"></th>
-</tr>
-<tr>
-    <th><input type="button" value="0" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="=" onclick="resultado(this.value)"></th>
-    <th><input type="button" value="C" onclick="resultado(this.value)"></th>   
-    <th><input type="button" value="+" onclick="resultado(this.value)"></th>
-</tr>
-</table>
-
+     <!-- Parrafos que indican lo que se hara -->
+     <h1>Suma de 2 variables</h1>
+     <p>Capturar 2 valores enteros que se puedan sumar y se muestre el resultado</p>
+ <p>Variables a y b, con valores enteros</p>
+ <p>El valor de salida sera un entero</p>
+ <p>Valores finales de a y b se enviaran a la variable resultados</p>
+ 
+ <!-- Campos que Capturan los valores -->
+ <label for="a">Ingrese el primer numero</label>
+ <input type="number" id="a" name="a"> <br>
+ <label for="b">Ingrese el segundo numero</label>
+ <input type="number" id="b" name="b"> <br> <br>
+ 
+ <!-- Botones que llaman a sus funciones -->
+ <button onclick="sumar()">sumar</button> 
+ ><br> <br>
+ 
+ <!-- Input que muestra el resultado -->
+ <label for="resultado">Resultado de la operacion</label>
+ <input type="number" id="resultado" name="resultado"> <br>
+ 
+ <script>
+     function sumar(){ 
+         //se capturan los valores de los inputs y se almacenana en variables
+       var a = document.getElementById("a").value;
+       var b = document.getElementById("b").value;
+       //Se define la variable redsultado
+       var resultado;
+      //Verificacion de las cadenas si son cadenas vacias
+     if(a == ""){
+         a = 0;}
+         else{
+             a = parseInt(a);
+         }
+ 
+         if(b == ""){
+         b = 0;}
+         else{
+             b = parseInt(b);
+         }
+         //resultado de la operacion
+         resultado = a + b;
+  //se muestra el resultado de la operacion en el navegador
+     document.getElementById("resultado").value = resultado
+      }
+      </script>
+ 
 </body>
 </html>
